@@ -1,0 +1,622 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	outline: none;
+}
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+body {
+	background: white;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0;
+}
+
+a img { outline:none; }
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000;
+}
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+a:active {
+	color: #000;
+}
+p {
+	margin: 0;
+}
+
+h1, h1 a, h1 a:visited, h1 a:hover, h1 a:active {
+	font-size: 26px;
+	color: #230801;
+	margin: 15px 0 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+}
+h2, h2 a {
+	font-size: 18px;
+	color: #230801;
+	margin: 6px 0;
+}
+h3, h3 a, h3 a:visited, h3 a:hover, h3 a:active {
+	color: #2b1807;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: inherit;
+}
+h4 {
+	font-size: 10px;
+	margin: 0;
+}
+
+/* Table Styles */
+table {
+	border:none;
+	width:100%;
+}
+th {
+	border: none;
+}
+td {
+	vertical-align:top;
+	border:none;
+}
+
+hr {
+	height: 1px;
+	border-top: 1px solid #280a02;
+	border-left: none;
+	border-bottom: none;
+	border-right: none;
+	background:none;
+	margin: 2px 0 5px;
+}
+
+/*-- Data Tables, Links & Row Hover --*/
+table.data {
+	border-collapse: separate;
+	border: 1px solid #000;
+	padding: 1px;
+	margin-bottom: 10px;
+}
+
+table.data td {
+	padding: 1px 4px;
+	background-color: none;
+	font-size: 11px;
+	height: 12px;
+	overflow: hidden;
+	border: none;
+}
+.data p {
+	color: #000;
+	margin: 3px 0;
+}
+table.data a {
+	color:#000;
+}
+
+/* H2 Header Rows */
+tr.h2 {
+	background-color: none;
+}
+.h2 th {
+	border-bottom: 1px solid #000;
+}
+.h2 h2, .h2 h2 a {
+	font-size: 18px;
+	color: #000;
+	margin: 7px 0 6px 5px;
+	text-align: left;
+}
+
+/* H3 Header Rows */
+th h3 {
+	color: #2b1807;
+	font-size:12px;
+	font-weight:bold;
+	margin: 3px 0;
+	text-transform:uppercase;
+}
+tr.h3 th {
+	background-color:#CDBEAD;
+	border-bottom: 1px solid #2b1807;
+	padding:3px 3px 1px;
+}
+
+/* Table Section Headings */
+.section_title td {
+	background-color: none !important;
+	border-top: 1px solid #2b1807;
+	border-bottom: 1px solid #2b1807;
+}
+.section_title h2, .section_title h2 a {
+	font-weight: bold;
+	color: #2b1807;
+	text-align: center !important;
+}
+.section_title h3, .section_title h3 a {
+	font-weight: bold;
+	color: #2b1807;
+	text-align: center !important;
+	font-size: 16px; 
+	margin: 3px 0;
+	text-transform:none;
+}
+
+/* Column Titles */
+.column_titles h4, .column_titles h4 a {
+	color: #999;
+	margin: 3px 0 0;
+}
+.column_titles h4 a:hover {
+	text-decoration: hover;
+}
+.line td {
+	height: 3px;
+}
+.line hr {
+	height: 1px;
+	background-color: #999;
+	display:block;
+	border:none;
+}
+
+/* Row Totals Formatting */
+tr.total td, tr.total:hover td {
+	background-color: none;
+	padding: 7px 5px 5px !important;
+	font-size: 14px !important;
+	color: #2b1807;
+	border-top: 1px solid #999;
+	text-align: right;
+	font-weight: bold;
+}
+tr.total td p {
+	font-weight: bold;
+	color: #000;
+	margin: 0;
+}
+
+/* H-Tags spans */
+h1 span {
+	font-size: 16px;
+	padding-bottom:3px;
+}
+h2 span {
+	font-size: 12px;
+}
+h3 span {
+	font-size: 10px;
+}
+
+/* General Formatting Classes */
+.right {
+	text-align: right !important;
+}
+.left {
+	text-align: left !important;
+}
+
+/* -- Header --*/
+#header {
+	width: 100%;
+	min-width: 900px;
+	height: 115px;
+	margin: 0 auto;
+	position:relative;
+	clear:both;
+}
+#logo {
+	width: 232px;
+	height: 69px;
+	float:left;
+	position:relative;
+	margin: 10px 0 0 0px;
+	background-image:none;
+}
+#logo img {
+	display:none;
+}
+#sid {
+	width: 344px;
+	height: 72px;
+	display:block;
+	position:relative;
+	margin:15 auto 0;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+#sid img {
+	visibility:visible;
+}
+#admin {
+	width: 211px;
+	height: 26px;
+	position:relative;
+	background-image: url(../images/admin-bg.gif);
+	background-repeat:no-repeat;
+	margin:0px;
+	clear:both;
+	text-align:center;
+	font-size:11px;
+	color: #381c01;
+	padding: 1px;
+	float:right;
+	display:none;
+}
+#admin p {
+	margin: 6px 0 0 0;
+	color: #381c01;
+	text-transform:uppercase;
+}
+#admin a {
+	color: #381c01;
+	padding: 0 6px;
+	text-decoration:none;
+}
+#admin a:hover {
+	text-decoration: underline;
+}
+#ccast {
+	position:relative;
+	width: 80px;
+	height: 47px;
+	float:right;
+	background-image: url(../images/ccast-print.gif);
+	background-repeat: no-repeat;
+	top: 40px;
+	margin-right:10px;
+}
+
+
+/*-- Nav Bar --*/
+#nav_bar {
+	height: 46px;
+	width: 100%;
+	min-width: 900px;
+	margin: 0 auto;
+	position:relative;
+	z-index: 50;
+	display: none;
+}
+
+#nav {
+	position:relative;
+	float:left;
+	height: 46px;
+	width: 675px;
+	margin: 0;
+	z-index: 55;
+}
+
+#nav_search {
+	position:relaive;
+	float: right;
+	right: 0;
+	width: 207px;
+	height: 46px;
+	padding-top: 7px;
+}
+#search_field {
+	width: 171px;
+	height: 32px;
+	position: relative;
+	float: left;
+	background-image:url(../images/search-bg.gif)
+}
+.nav_searchField {
+	color: #957f66;
+	width: 171px;
+	border: none;
+	background: none;
+	font-size: 11px;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 9px 0 0 10px;
+}
+#nav_searchButton {
+	width: 36px;
+	height: 32px;
+	float:left;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	font-size: 0;
+	text-indent:-999px;
+	overflow: hidden;
+	background-image:url(../images/search-button.gif);
+	background-position: 0 0;
+	cursor:pointer;
+	border:none;
+}
+#nav_searchButton:hover {
+	background-position: 0 -32px;
+}
+#nav_searchButton:active {
+	background-position: 0 -64px;
+}
+
+
+/*-- Content --*/
+#content {
+	width: 100%;
+	min-width: 900px;
+	margin: 0 auto;
+	padding: 0 0 10px;
+	position:relative;
+	min-height: 400px;
+	z-index: 1;
+}
+
+
+/*-- Footer --*/
+#footer {
+	width:100%;
+	background-color: #fff;
+	position:relative;
+	margin: 0 auto;
+	background-image: none;
+}
+#footer_inside {
+	position: relative;
+	padding: 16px 0 50px;
+	width: 100%;
+	min-width: 900px;
+	margin: 0 auto;
+}
+#footer p {
+	color: #000;
+}
+#footer a {
+	color: #000;
+}
+
+/*-- Search Page --*/
+.searchField_lg {
+	background-color:#F2ECE5;
+	border:1px solid #280A02;
+	color:#280A02;
+	font-family:Helvetica,Arial;
+	font-size:22px;
+	height:41px;
+	margin:0;
+	padding:5px 0 0px 10px;
+	width:300px;
+	float:left;
+	position:relative;
+}
+.searchButton_lg {
+	width: 56px;
+	height: 48px;
+	float:left;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	font-size: 0;
+	text-indent:-999px;
+	overflow: hidden;
+	background-image:url(../images/lg-search-button.gif);
+	background-position: 0 0;
+	cursor:pointer;
+	border:none;
+}
+.searchButton_lg:hover {
+	background-position: 0 -48px;
+}
+.searchButton_lg:active {
+	background-position: 0 -97px;
+}
+
+/*-- Login Page --*/
+.loginField {
+	padding: 8px 6px;
+	font-size: 24px;
+	color: #280a02;
+}
+
+
+/*-- Filter Tabs --*/
+
+.tabs {
+	width:100%;
+	display:block;
+	position:relative;
+	text-transform:uppercase;
+}
+.tab_active {
+	position: relative;
+	display: block;
+	float:left;
+	border: 1px solid #000;
+	border-bottom: none;
+	padding: 1px 15px 0;
+	height: 30px;
+	background-color: none;
+	margin:5px 3px 0 0;
+}
+.tab_active p {
+	font-size: 14px;
+	margin: 9px 0 0 0;
+	color: #000;
+	font-weight: bold;
+}
+.tab_inactive {
+	float:left;
+	position:relative;
+	display:block;
+	background-color: none;
+	border: 1px solid #000;
+	border-bottom: none;
+	padding: 1px 12px 0;
+	height: 27px;
+	margin:8px 3px 0 0;
+}
+.tab_inactive a {
+	display: block;
+	padding: 7px 0 4px;
+	color: #000;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+/*-- Date Selection --*/
+.date_select {
+	background-color: none;
+	padding: 4px 0 5px;
+	text-align: left;
+}
+.date_select p {
+	color: #000;
+	text-transform: uppercase;
+	font-size: 11px;
+	margin: 1px 2px 0 8px;
+}
+.date_select #dteToDate, .date_select #dteFromDate {
+	font-family: Helvtica, Arial, sans-serif;
+	border: 1px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #000;
+	border: 1px solid #999;
+	text-align: center;
+	background-color: none;
+	padding: 2px 0 3px;
+	margin:0;
+}
+.date_select .date_check {
+	margin-left: 8px;
+}
+.date_select .excel {
+	margin: 1px 6px !important;
+}
+
+/*-- Dashboards --*/
+.dash_section {
+	border-bottom: 1px solid #000;
+	margin-bottom: 5px;
+}
+.dash_section th {
+	text-align: left;
+}
+.dash_section th
+.dash_section h3 {
+	color: #000;
+	font-size:13px;
+	margin:6px 0 0 3px;
+	text-align:left;
+	text-transform:uppercase;
+}
+.dash_section h3 a {
+	background-image: url(../images/h2-hover.gif);
+	display: block;
+	background-position: right top;
+	background-repeat:no-repeat;
+	height: 17px;
+}
+.dash_section h3 a:hover {
+	background-position: right -19px;
+}
+
+/*-- Icons --*/
+.refresh {
+	background-image:url(../images/refresh.gif);
+	height: 32px;
+	width: 101px;
+	display: block;
+	text-indent: -9999px;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	border:0;
+	cursor: pointer;
+	display:none;
+}
+.excel {
+	display:block;
+	height: 30px;
+	width: 30px;
+	border: none;
+	text-indent:-9999px;
+	overflow:hidden;
+	background-image:url(../images/excel.png);
+	background-position:top center;
+	background-repeat: no-repeat;
+	margin: 0 0 5px 10px;
+	float:right;
+	display:none;
+}
+.excel:hover {
+	background-position:bottom center;
+}
+.row_info {
+	display: block;
+	height: 13px;
+	width: 15px;
+	border: none;
+	background-image:url(../images/info.gif);
+	background-position: top center;
+	margin: 0 auto;
+	text-indent:-9999px;
+	overflow:hidden;
+	display:none;
+}
+.row_info:hover {
+	background-position: bottom center;
+}
+
+/*-- Forms --*/
+.add_form {
+	border-collapse: separate;
+	border: 1px solid #000;
+	padding: 2px;
+	width: 400px;
+	margin: 20px auto 0;
+	display: table;
+}
+.add_form th {
+	background-color:#CDBEAD;
+}
+.add_form h2 {
+	text-align: left;
+	margin-left: 5px;
+}
+.add_form td {
+	padding: 1px 4px;
+	background-color: #efe7e1;
+	font-size: 11px;
+	height: 12px;
+	overflow: hidden;
+}
+
+.formField {
+	background-color: #f2ece5;
+	border: 1px solid #280a02;
+}
+
+
+/*-- Alert Classes --*/
+.Highlight {
+	background-color: #F00;
+	color: #fff;
+}
+.alertTag {
+	background-color: #F00;
+}
+
+.AlertTagYellow {
+	background-color: #FF0 !important;
+}
+.AlertTagRed {
+	background-color: #F00 !important;
+}

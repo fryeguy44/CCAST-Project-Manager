@@ -1,0 +1,188 @@
+﻿<%@LANGUAGE="VBSCRIPT"%>
+<!--#include file="Connections/OBA.asp" -->
+<%
+Dim lng[TableName]ID
+Dim strReturnPath
+
+lng[TableName]ID = Request.QueryString("lng[TableName]ID")
+If Request.QueryString("strReturnPath") = "" Then
+	strReturnPath = Request.ServerVariables("HTTP_REFERER")
+Else
+	strReturnPath = Request.QueryString("strReturnPath")
+End If
+%>
+<%
+If (CStr(Request("MM_update")) = "frmEdit") Then
+	lngAccessTypeID = 2
+End If
+If (CStr(Request("MM_delete")) = "frmDelete" And CStr(Request("MM_recordId")) <> "") Then
+	lngAccessTypeID = 4
+End If
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<%
+If lngAccessTypeID = "" Then
+	lngAccessTypeID = 1
+End If
+%>
+<!--#include file="Templates/incMasterSecurity.asp" -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%=strPageTitle & " " & strSubTitle%></title>
+<link rel="shortcut icon" href="favicon.ico" />
+
+<!-- CSS Global -->
+<link href="/global/css/global.css"rel="stylesheet" type="text/css" />
+
+<!-- CSS Local -->
+<link href="/local/css/local.css" rel="stylesheet" type="text/css" />
+
+<!-- Print Stylesheet -->
+<link rel="stylesheet" type="text/css" href="/global/css/print.css" media="print" />
+
+<!-- TemplateBeginEditable name="Head" -->
+<%
+If (CStr(Request("MM_update")) = "frmEdit") Then
+	Response.Redirect(Request.Form("htbxReturnPath"))
+End If
+If (CStr(Request("MM_delete")) = "frmDelete" And CStr(Request("MM_recordId")) <> "") Then
+	Response.Redirect("[TableName]s.asp")
+End If
+
+%>
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/base/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+<!-- Datepicker -->
+<script type="text/javascript" charset="utf-16">
+$(function() {
+	$("#dteFromDate").datepicker();
+});
+</script>
+
+
+<!-- TemplateEndEditable -->
+
+</head>
+
+<body>
+
+<!-- Begin Header -->
+<div id="wrapper"> <!-- Wrapper div creates sticky footer -->
+	<div id="header">
+		<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+			<td width="256">&nbsp;</td>
+			<td width="364" align="center">
+			  <div id="sid"></div></td>
+			<td width="211">
+              <div id="ccast">
+			  <p><a href="../MyAccount.asp"><%=Session("MM_Username")%> Profile</a> | <a href="../logoff.asp">Log Out</a></div></td></p>
+			</tr>
+		</table>
+	</div>
+<!-- End Header -->
+
+<!-- Begin Nav & Search -->
+	<div id="nav_bar">
+		
+		<div id="nav">
+			<!-- Quick menu moved to local folder to support different color schemes -->
+			<!--#include virtual="/local/menu/incQuickMenu.asp" -->
+		</div>
+		
+		<div id="nav_search">			
+            <a href="/help/index.htm?context=<%=intHelpContextID%>" target="_blank" class="help">Help</a>
+  		</div>
+	</div>
+<!-- End Nav & Search -->
+
+<!-- Begin Content -->
+	
+	<div id="content">
+
+<!-- #BeginEditable "content" -->
+	<h1><%=strPageTitle & " " & strSubTitle%></h1>	
+	<table border="0" cellspacing="0" cellpadding="0" class="box">
+<%
+If bol[SecurityElement]EditGranted Then
+	If rst[TableName]s.EOF Then
+%>  
+        <tr>
+          <th colspan="4">&nbsp;</th>
+        </tr>
+        <tr>
+            <td colspan="4"><a href="[TableName]s.asp">The [TableName] you are attempting to edit has been deleted. Click here to return to the [TableName] List page</a></td>
+        </tr>
+<%
+	Else
+%>     
+    	<form id="frmEdit" name="frmEdit" method="POST" action="">
+        <tr>
+            <td width="10">&nbsp;</td>
+            <td align="right"><strong>[TableName] Name</strong></td>
+          <td><input type="text" name="tbx[TableName]Name" id="tbx[TableName]Name" /></td>
+		<td>&nbsp;</td>
+		</tr>
+        <tr>
+            <td width="10">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input type="submit" name="btnEdit" id="btnEdit" value="Update" /></td>
+            <td>&nbsp;</td>
+      </tr>
+        <input name="htbxReturnPath" type="hidden" id="htbxReturnPath" value="<%=strReturnPath%>" />
+        </form>
+<%
+		If bol[SecurityElement]DeleteGranted Then
+%>                
+      <tr>
+        <td width="10">&nbsp;</td>
+            <td><form id="frmDelete" name="frmDelete" method="POST" action="<%=MM_editAction%>">
+              <input type="submit" name="btnDelete" id="btnDelete" value="Delete" />
+              <input name="htbxReturnPath" type="hidden" id="htbxReturnPath" value="<%=strReturnPath%>" />
+            </form>            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+      </tr>
+<%
+		End If
+	End If
+Else
+%>
+        <tr>
+            <td colspan="4">Certain "[SecurityElement]" permissions are required to perform this task.</td>
+        </tr>
+
+<%
+
+End If
+%>
+        <tr>
+            <td width="10">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+<!-- #EndEditable -->
+
+</div>
+
+<!-- End Content -->
+
+<!-- Begin Footer -->
+
+	<div id="push"></div> <!-- Push for sticky footer -->
+
+</div><!-- End Wrapper -->
+	
+<!--#include file="../Includes/incFooter.asp" -->
+<!-- End Footer -->
+
+</body>
+
+</html>

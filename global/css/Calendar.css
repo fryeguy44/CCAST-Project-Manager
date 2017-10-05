@@ -1,0 +1,143 @@
+﻿.EmptyBox {
+	background-color: #FFFFFF;
+}
+.MonthHeader {
+	background-color: #D41F26;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	color: #FFFFFF;
+}
+.WeekDayHeader {
+	background-color: #D8D8D8;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	color: #393939;
+}
+.CalendarBox {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	background-color: #FFFFFF;
+	font-size: small;
+}
+
+.DayHeader {
+	color: #FFFFFF;
+	background-color: #000000;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000000;
+}
+
+.Valet {
+	color: #000000;
+	background-color: #9900FF;
+}
+
+.Cleaning {
+	color: #000000;
+	background-color: #9900FF;
+}
+
+.Driver {
+	color: #000000;
+	background-color: #FFCC99;
+}
+
+.User {
+	color: #000000;
+	background-color: #9999FF;
+}
+
+.AME {
+	color: #000000;
+	background-color: #FFFF99;
+}
+.SUN {
+	color: #000000;
+	background-color: #FFCC66;
+}
+
+.GEM {
+	color: #000000;
+	background-color: #66CC99;
+}
+
+.JAD {
+	color: #000000;
+	background-color: #339999;
+}
+
+.JWL {
+	color: #000000;
+	background-color: #FF99CC;
+}
+
+.PRL {
+	color: #000000;
+	background-color: #CCCCCC;
+}
+
+.SKY {
+	color: #000000;
+	background-color: #00CCFF;
+}
+
+.SPR {
+	color: #000000;
+	background-color: #9999CC;
+}
+.STA {
+	color: #000000;
+	background-color: #666666;
+}
+td {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	vertical-align: top;
+}
+.ContainerBox {
+	border-right-width: 1px;
+	border-right-style: none;
+	border-right-color: #FFFFFF;
+}
+.ContainerBoxLeft {
+}

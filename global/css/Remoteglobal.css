@@ -1,0 +1,705 @@
+@charset "UTF-8";
+
+/* 									*	
+ *		SID GLOBAL STRUCTURE		*
+ * 									*/
+
+
+/*  Tags  */
+
+* {outline: none;}
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100%; /* Needed for Sticky Footer */
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0;
+	background-position:top center;
+	background-repeat:repeat-x;
+	height: 100%; /* Needed for Sticky Footer */
+}
+a, a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+a img {outline: none; border: none;}
+p {margin: 0;}
+h1, h1 a, h1 a:visited, h1 a:hover, h1 a:active {
+	font-size: 26px;
+	margin: 15px 0 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+}
+h2, h2 a, h2 a:visited, h2 a:hover, h2 a:active {
+	font-size: 18px;
+	margin: 6px 0;
+}
+h3, h3 a, h3 a:visited, h3 a:hover, h3 a:active {
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: inherit;
+	margin: 3px 0;
+}
+h4 {
+	font-size: 10px;
+	margin: 0;
+}
+input, textarea {
+	outline:none;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+
+/*  General Table Settings  */
+
+table {
+	border:none;
+	width:100%;
+}
+td {											/* Table Cells */
+	vertical-align:top;
+	border:none;
+}
+hr {											/* Horizontal Lines */
+	height: 1px;
+	border-left: none;
+	border-bottom: none;
+	border-right: none;
+	background:none;
+	margin: 2px 0 5px;
+}
+
+
+/*  Header  */
+
+#header {
+	width: 90%;
+	min-width: 900px;
+	height: 145px;
+	margin: 0 auto;
+	position:relative;
+	clear:both;
+}
+#logo {											/* Casino Logo (Left) */
+	display:block;
+	float:left;
+	background-image: url(/local/images/logo.gif);
+	background-repeat: no-repeat;
+}
+#sid {											/* SID Logo (Center) */
+	display:block;
+	position:relative;
+	background-repeat: no-repeat;
+	background-image: url(../../local/images/CYA.png);
+}
+#sid img {visibility: hidden;}					/* Hides Print Version of SID Logo */
+#ccast {										/* CCAST Logo in Header */
+	position:relative;
+	width: 180px;
+	height: 100px;
+	float:right;
+	background-image: url(/global/images/CasinosAtSea.png);
+	top: 14px;
+	color: #050f40;
+	text-align:center;
+	background-position: 4px 10px;
+}
+#ccast p {
+	margin: 5px 0 10px 0;	
+	text-transform: uppercase;
+	font-size:10px;
+}
+#ccast a {
+	color: #050f40;
+	padding: 0 10px;
+}
+#ccast a:visited {
+	color: #050f40;
+}
+#ccast img {
+}				/* Hides Print Version of CCAST Logo */
+
+
+/*  Nav Bar  */
+
+#nav_bar {										/* Navigation Row Container */
+	height: 46px;
+	width: 90%;
+	min-width: 900px;
+	margin: 0 auto;
+	position:relative;
+	z-index: 50;
+}
+#nav {											/* QuickMenu Container */
+	position:relative;
+	float:left;
+	height: 46px;
+	width: 610px;
+	margin: 0;
+	z-index: 55;
+}
+#nav_search {									/* Nav Row Search Container */
+	position:relaive;
+	float: right;
+	right: 0;
+	width: 235px;
+	height: 46px;
+	padding-top: 7px;
+}
+#search_field {									/* Nav Row Search Field Div */
+	width: 171px;
+	height: 32px;
+	position: relative;
+	float: left;
+	background-image:url(/local/images/search-bg.gif)
+}
+.nav_searchField {								/* Nav Row Search Field Input */
+	width: 171px;
+	border: none;
+	background: none;
+	font-size: 11px;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 7px 0 9px 10px;
+}
+#nav_searchButton {								/* Nav Row Search Button */
+	width: 36px;
+	height: 32px;
+	float:left;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	font-size: 0;
+	text-indent:-999px;
+	overflow: hidden;
+	background-image:url(/local/images/search-button.gif);
+	background-position: 0 0;
+	cursor:pointer;
+	border:none;
+}
+#nav_searchButton:hover {						/* Nav Row Search Button Feedback */
+	background-position: 0 -32px;
+}
+#nav_searchButton:active {
+	background-position: 0 -64px;
+}
+#nav_search a.help {									/* Nav Row Help */
+	background-image:url(/global/images/help-lg.png);
+	display:block;
+	float:right;
+	height:31px;
+	margin:2px 0 0 0;
+	overflow:hidden;
+	text-indent:-9999px;
+	width:26px;
+	right: 0;
+}
+#nav_search a.help:hover {	
+	background-position: 0 -29px;
+}
+
+
+/*  Content  */
+
+#content {										/* Content Area Container */
+	width: 90%;
+	min-width: 900px;
+	margin: 0 auto;
+	padding: 0;
+	position:relative;
+	z-index: 1; /* Should prevent IE z-index issues with menu */
+}
+
+
+/*  Footer  */
+
+#wrapper {										/* Sticky Footer - Pushes Footer To   */
+	min-height: 100%; 							/* Bottom of Short Pages              */
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -65px;
+}
+#push {											/* Neeeded for Sticky Footer */
+	height:90px;
+}
+#footer {										/* Full-Width Footer */
+	width:100%;
+	position:relative;
+	margin: 0;
+	background-image: url(/local/images/footer-bg.gif);
+	background-position: top center;
+	background-repeat: repeat-x;
+	height: 65px;
+}
+#footer_inside {								/* Footer Content Container */
+	position: relative;
+	padding: 16px 0 0;
+	width: 90%;
+	min-width: 900px;
+	margin: 0 auto;
+}
+
+
+/*  Search Page  */
+
+.searchField_lg {								/* Large Search Field Settings */
+	font-family:Helvetica,Arial;
+	font-size:22px;
+	height:41px;
+	margin:0;
+	padding:5px 0 0px 10px;
+	width:300px;
+	float:left;
+	position:relative;
+}
+.searchButton_lg {								/* Large Search Button */
+	width: 56px;
+	height: 48px;
+	float:left;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	font-size: 0;
+	text-indent:-999px;
+	overflow: hidden;
+	background-image:url(/local/images/lg-search-button.gif);
+	background-position: 0 0;
+	cursor:pointer;
+	border:none;
+}
+.searchButton_lg:hover {						/* Large Search Button Feedback */
+	background-position: 0 -48px;
+}
+.searchButton_lg:active {
+	background-position: 0 -97px;
+}
+
+
+/*  Login Page  */
+
+.loginField {									/* Username/Password Field Settings */
+	padding: 8px 6px;
+	font-size: 24px;
+}
+
+
+/*  Parent Tables  */
+
+table.fluid {									/* Full-Width, Small Text Size */
+	border-collapse: separate;
+	padding: 1px;
+	margin-bottom: 20px;
+}
+table.fluid td {
+	padding: 0px 4px;
+	font-size: 11px;
+	height: 12px;
+	overflow: hidden;
+}
+table.fixed {									/* Fixed-Width, Larger Text Size */
+	border-collapse: separate;
+	padding: 1px;
+	margin: 0 auto 20px;
+	width: 700px; /* Sometimes overridden inline */
+}
+table.fixed td {
+	padding: 0 3px;
+	font-size: 13px;
+	overflow: hidden;
+}
+table.inside_reduce td {						/* Class that can be applied to <table to reduce text size */
+	padding: 0px !important;
+	font-size: 11px !important;
+}
+table.enlarge td {								/* Class that can be applied to <table> to enlarge text size */
+	font-size: 13px;
+}
+table.info {									/* Slightly Wider For Information Pages */	
+	border-collapse: separate;
+	padding: 1px;
+	margin: 0 auto 10px;
+	width: 750px;
+}
+table.info td {
+	padding: 1px 4px;
+	font-size: 13px;
+	height: 12px;
+	overflow: hidden;
+}
+.box {											/* Box (600px Wide) Tables (Mostly used for Add/Edit Forms) */
+	border-collapse: separate;
+	padding: 2px;
+	width: 600px;
+	margin: 5px auto 10px;
+	display: table;
+	font-size: 14px;
+}
+.box h2 {
+	text-align: left;
+	margin-left: 5px;
+}
+.box td {
+	padding: 1px 4px;
+	font-size: 13px;
+	height: 12px;
+	overflow: hidden;
+}
+.box3 {											/* Box3 (400px Wide) Tables (Mostly used for Add/Edit Forms) */
+	border-collapse: separate;
+	padding: 2px;
+	width: 350px;
+	margin: 5px auto 10px;
+	display: table;
+	font-size: 14px;
+	border: 2px solid #000;
+}
+.box3 h2 {
+	text-align: left;
+	margin-left: 5px;
+}
+.box3 td {
+	padding: 1px 4px;
+	font-size: 13px;
+	height: 12px;
+	overflow: hidden;
+}
+
+
+/*  Child Tables  */
+
+table.matrix {									/* Matrix Tables */
+	width: 600px;
+	margin: 15px auto 15px;
+}
+table.matrix .header td {						/* Matrix Header Row (Don't use <th> - apply to <tr>) */
+	font-weight: normal;
+	padding: 3px 0;
+}
+table.matrix tr.subhead td {					/* Matrix Subhead Row (apply to <tr>) */
+	font-size: 11px;
+	padding: 3px;
+}
+table.matrix td {
+	padding: 5px;
+	font-size: 14px
+}
+.help_box {										/* Help Boxes */
+	margin: 2px 0 8px;
+}
+.help_box h2 {
+	text-align: left;
+	margin-left: 5px;
+}
+.help_box td {
+	padding: 3px !important;
+}
+
+
+/*  Miscellaneous Table Settings  */
+tr.align_middle td {							/* Aligns Text Middle instead of default Top */
+		vertical-align:middle !important;
+}
+.no_padding td {								/* Apply to <table> to remove top/bottom padding */ 
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+
+/*  Table  Headings  */
+
+th h2, th h2 a {								/* Formats H2 Tags when used in <th> */
+	font-weight: bold;
+	margin: 7px 10px;
+}
+th h3, th h3 a {								/* Formats H3 Tags when used in <th> */
+	font-weight: bold;
+	font-size: 14px; 
+	margin: 5px 4px;
+}
+th h4 {											/* Formats H4 Tags when used in <th> */
+	margin: 5px 4px;
+}
+
+
+/*  Column Titles  */
+
+tr.column_titles h4 {								/* Small Column Titles (use H4 Tags) */
+	margin: 3px 0 0;
+}
+tr.line td {									/* Small Column Titles Underline Cell */
+	height: 3px !important;
+	padding-top: 0 !important;
+	padding-bottom: 1px !important;
+}
+tr.line hr {									/* Small Column Titles Underline */
+	height: 1px;
+	display:block;
+	border:none;
+	margin: 2px 0 0 0;
+}
+
+
+/*  Total Rows  */
+
+tr.total td,
+tr.total:hover td {
+	padding: 7px 5px 5px !important;
+	font-size: 14px !important;
+	font-weight: bold;
+}
+tr.total td p {
+	font-weight: bold;
+	margin: 0;
+}
+
+
+/*  H-Tag spans  */
+
+h1 span {										/* Reduces size of Text within H-Tag <span> */
+	font-size: 16px;
+	padding-bottom:3px;
+}
+h2 span {
+	font-size: 12px;
+}
+h3 span {
+	font-size: 10px;
+}
+
+
+/*  Tabs  */
+
+.tabs {											/* Filter Tabs Container */
+	height: 36px;
+	width:100%;
+	display:block;
+	position:relative;
+	text-transform:uppercase;
+	margin: 0 auto;
+}
+.tab_active {									/* Active Filter Tab */
+	position: relative;
+	display: block;
+	float:left;
+	border-bottom: none;
+	padding: 1px 15px 0;
+	height: 30px;
+	margin:5px 3px -1px 0;
+}
+.tab_active p {
+	font-size: 14px;
+	margin: 6px 0 0 0;
+	font-weight: bold;
+}
+.tab_inactive {									/* Inactive Filter Tab (link) */
+	float:left;
+	position:relative;
+	display:block;
+	border-bottom: none;
+	padding: 1px 12px 0;
+	height: 27px;
+	margin:8px 3px -1px 0;
+}
+.tab_inactive a {
+	display: block;
+	padding: 7px 0 4px;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+
+/*  Date Select Row  */
+
+tr.date_select {								/* For Table Date Select Forms (apply to <tr>) */
+	padding: 4px 0 5px;
+	text-align: left;
+}
+tr.date_select th {								/* Date Select Rows should use <th>, not <td> */
+	padding: 4px 0;
+	border-top: none;
+}
+tr.date_select p {								/* Date Select Text/Input Fields should be contained in <p> */
+	text-transform: uppercase;
+	font-size: 11px;
+	margin: 0px 2px 0 8px;
+}
+.date_select #dteFromDate,
+.date_select #dteToDate {						/* Formats Date Input Fields (IDs used in jQuery datepicker) */
+	font-family: Helvetica, Arial, sans-serif;
+	border: 1px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 5px 8px 3px 8px;
+	margin:0 2px;
+	width: 75px;
+}
+.date_select .date_check {						/* Adds margin for Checkbox */
+	margin-left: 8px;
+}
+.date_select #btnGo {							/* Adds margin for Submit Button */
+	margin-left: 5px;
+}
+
+
+/*  Dashboard Pages  */
+
+table.dash_section {
+	margin: 3px 0 5px;
+	padding-bottom: 5px;
+}
+table.dash_section th {
+	text-align: left;
+	padding: 4px 3px;
+}
+table.dash_section h3 {
+	font-size:13px;
+	margin: 0;
+	padding: 0px 0 0px 3px;
+	text-align:left;
+	text-transform:uppercase;
+}
+table.dash_section th h3 a {
+	font-size:13px;
+	background-image: url(/local/images/h2-hover.gif);
+	display: block;
+	background-position: right top;
+	background-repeat:no-repeat;
+	height: 17px;
+	margin:0;
+	padding-top:2px;
+}
+table.dash_section th h3 a:hover {
+	font-size:13px;
+	background-position: right -19px;
+	margin: 0;
+}
+
+/*-- Icons --*/
+
+.refresh {										/* Table Data Refresh Button */
+	background-image:url(/local/images/refresh.gif);
+	height: 32px;
+	width: 101px;
+	display: block;
+	text-indent: -9999px;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	border:0;
+	cursor: pointer;
+}
+.excel {										/* Excel Download links (Class applied to <a>)*/
+	display:block;
+	height: 30px;
+	width: 30px;
+	border: none;
+	text-indent:-9999px;
+	overflow:hidden;
+	background-image:url(/local/images/excel.png);
+	background-position:top center;
+	background-repeat: no-repeat;
+	margin: 0 0 5px 10px;
+	float:right;
+}
+.excel:hover {
+	background-position:bottom center;
+}
+th .excel {										/* Adds Padding around icon when used in <th> */
+	margin: 2px;
+}
+h2 a.print {									/* Print Icons (currently only being used on H2 Tags */
+	background-image:url(global/images/printer-lg.png);
+	background-repeat: no-repeat;
+	padding: 4px 0 0 30px;
+	margin:0 auto;
+	height:22px;
+	display: block;
+	text-align: left;
+}
+h2 a.print:hover {
+	background-position: 0 -28px;
+}
+
+
+/*  Information Icons  */
+
+.row_info {										/* Info icon with no text, alone in <td> */
+	display: block;
+	height: 13px; /* NOTE: May affect row height */
+	width: 15px;
+	border: none;
+	background-image:url(/global/images/info.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.tr_hover:hover .row_info,						/* Highlight on row hover & image hover */
+.row_info:hover {									
+	background-position: bottom center !important;
+}
+.info_link {									/* Apply to <a> when text should be visible */
+	display: block;
+	height: 12px;
+	border: none;
+	background-image:url(/global/images/info.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	padding: 1px 0 1px 17px;
+	text-align: left;
+}
+.info_link:hover {	
+	background-position: 0 -18px !important;
+}
+
+
+/*  Alerts/Highlights  */
+
+.Highlight {
+	background-color: #F00;
+	color: #fff;
+}
+.alertTag {
+	background-color: #F00;
+}
+.AlertTagYellow {
+	background-image: url(/global/images/alert-bg.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+}
+.tr_hover:hover td.AlertTagYellow, td.AlertTagYellow:hover {	/* Yellow cell background on row hover */
+	background-color: #ff0 !important;
+}
+.AlertTagRedIcon {
+	background-image: url(/global/images/alert-bg.png);
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+}
+.AlertTagRed {
+	background-color: #F00 !important;
+}
+
+
+/*  My Account Page  */
+table.account {
+	width: 400px;
+}
+table.account td {
+	padding: 3px;
+	font-size: 14px;
+}
+
+
+/* Help Icons */
+h1 a.help {									/* H1 Help */
+	background-image:url(/global/images/help-lg.png);
+	padding: 4px 0 0 0;
+}
+h1 a.help:hover {	
+	background-position: 0 -29px;
+}

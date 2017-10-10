@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstClients" value="name:ClientID;datatype:20,name:ClientName;datatype:202,name:Source;datatype:202,name:CurrentRate;datatype:6,name:Skype;datatype:202,name:Teamviewer;datatype:3,name:Phone;datatype:202,name:Email;datatype:202,name:Notes;datatype:202,name:DateEntered;datatype:133" />
+	<infoitem key="UD_rstContacts" value="name:ContactID;datatype:20,name:ClientID;datatype:20,name:VendorID;datatype:20,name:ContactName;datatype:202,name:Title;datatype:202,name:Phone;datatype:202,name:Email;datatype:202,name:Skype;datatype:202,name:TeamViewer;datatype:3,name:Notes;datatype:202" />
+</info>

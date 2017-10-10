@@ -30,6 +30,7 @@ Set rstTestNavigation = rstTestNavigation_cmd.Execute
 		width:900px;
 		background-color:transparent;
 		z-index: 60;
+		box-sizing: inherit;
 	}
 
 

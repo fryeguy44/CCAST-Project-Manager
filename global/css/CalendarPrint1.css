@@ -1,0 +1,167 @@
+﻿.EmptyBox {
+	background-color: #FFFFFF;
+}
+.MonthHeader {
+	background-color: #FEEDEC;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+.WeekDayHeader {
+	background-color: #FFCC99;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+.CalendarBox {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+
+.DayHeader {
+	color: #000000;
+	background-color: #D41F26;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000000;
+}
+.Lodge {
+	color: #990000;
+	background-color: #FFFFFF;
+}
+.GardenHouse {
+	color: #9900FF;
+	background-color: #FFFFFF;
+}
+
+.Moving {
+	color: #000000;
+	background-color: #9900FF;
+}
+
+.Valet {
+	color: #000000;
+	background-color: #9900FF;
+}
+
+.Cleaning {
+	color: #000000;
+	background-color: #9900FF;
+}
+
+.Bartender {
+	color: #000000;
+	background-color: #9900FF;
+}
+
+.Pasture {
+	color: #000000;
+	background-color: #999999;
+}
+
+.Corral {
+	color: #000000;
+	background-color: #666666;
+}
+
+.Caddy {
+	color: #000000;
+	background-color: #CCCCCC;
+}
+
+.BridalSuite {
+	color: #000000;
+	background-color: #FF99CC;
+}
+
+.RV {
+	color: #000000;
+	background-color: #0000FF;
+}
+
+.Stables {
+	color: #000000;
+	background-color: #663311;
+}
+.Courtyard {
+	color: #000000;
+	background-color: #61B329;
+}
+td {
+	font-family: "Times New Roman", Times, serif;
+	font-size: xx-small;
+	font-style: normal;
+	color: #000000;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+.ContainerBox {
+	border-right-width: 1px;
+	border-right-style: none;
+	border-right-color: #FFFFFF;
+}
+.ContainerBoxLeft {
+	display: none;
+}
+th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-style: normal;
+	font-weight: bolder;
+	color: #000000;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-style: normal;
+	font-weight: bolder;
+	color: #000000;
+}
+hr {
+	page-break-before: always;
+}

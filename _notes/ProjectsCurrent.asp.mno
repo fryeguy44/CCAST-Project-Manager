@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rstProjects" value="name:ProjectID;datatype:20,name:ProjectDescription;datatype:202,name:ProjectPriority;datatype:3,name:ProjectDetailID;datatype:20,name:DetailDescription;datatype:202,name:DeveloperNotes;datatype:202,name:OwnerNotes;datatype:202,name:Priority;datatype:3,name:BilledToOwner;datatype:11,name:StartTime;datatype:135,name:StageName;datatype:202,name:SortOrder;datatype:3,name:Hours;datatype:5,name:ProjectRate;datatype:6" />
+</info>

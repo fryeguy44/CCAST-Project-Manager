@@ -287,6 +287,27 @@ rstProjectDetails_cmd.Parameters.Append rstProjectDetails_cmd.CreateParameter("p
 Set rstProjectDetails = rstProjectDetails_cmd.Execute
 rstProjectDetails_numRows = 0
 %>
+<%
+Dim rstWorkHistory__lngClientID
+rstWorkHistory__lngClientID = "1"
+If (lngClientID <> "") Then 
+  rstWorkHistory__lngClientID = lngClientID
+End If
+%>
+<%
+Dim rstWorkHistory
+Dim rstWorkHistory_cmd
+Dim rstWorkHistory_numRows
+
+Set rstWorkHistory_cmd = Server.CreateObject ("ADODB.Command")
+rstWorkHistory_cmd.ActiveConnection = MM_OBA_STRING
+rstWorkHistory_cmd.CommandText = "SELECT Clients.ClientName, WorkHistorys.WorkHistoryID, WorkHistorys.ProjectDetailID, Vendors.VendorName, WorkHistorys.WorkDate, WorkHistorys.Hours, LEFT(WorkHistorys.WorkDescription, 150) AS WorkDescription,  ProjectDetails.DetailDescription,  Clients.CurrentRate, Projects.ProjectDescription FROM WorkHistorys  INNER JOIN ProjectDetails ON WorkHistorys.ProjectDetailID = ProjectDetails.ProjectDetailID  INNER JOIN Vendors ON WorkHistorys.VendorID = Vendors.VendorID  INNER JOIN Projects ON ProjectDetails.ProjectID = Projects.ProjectID  INNER JOIN Clients ON Projects.ClientID = Clients.ClientID  LEFT OUTER JOIN InvoiceDetails ON WorkHistorys.WorkHistoryID = InvoiceDetails.WorkHistoryID WHERE (InvoiceDetails.InvoiceDetailID IS NULL) AND Clients.ClientID = ? ORDER BY ClientName, WorkDate" 
+rstWorkHistory_cmd.Prepared = true
+rstWorkHistory_cmd.Parameters.Append rstWorkHistory_cmd.CreateParameter("param1", 5, 1, -1, rstWorkHistory__lngClientID) ' adDouble
+
+Set rstWorkHistory = rstWorkHistory_cmd.Execute
+rstWorkHistory_numRows = 0
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr"><!-- InstanceBegin template="/Templates/Information.dwt" codeOutsideHTMLIsLocked="false" -->
 <%
@@ -564,12 +585,61 @@ If bolClientsViewGranted Then
                     <td>&nbsp;</td>
                     <td colspan="7">&nbsp;</td>
                   </tr>
+	</table>
+	<table border="0" cellspacing="0" cellpadding="0" class="box">
+	  <tr>
+	    <th colspan="8"><h2>Unpaid Work History</h2></th>
+      </tr>
+	  <tr>
+	    <th>&nbsp;</th>
+		<th align="left"><h4>Vendor</h4></th>
+		<th align="left"><h4>Date</h4></th>
+		<th align="left"><h4>Description</h4></th>
+		<th align="left"><h4>Milestone</h4></th>
+		<th align="right"><h4>Hours</h4></th>
+		<th align="right"><h4>Amount</h4></th>
+		<th>&nbsp;</th>
+	  </tr>
+<%
+	Do While Not rstWorkHistory.EOF
+		If bolVendorsEditGranted Then
+			strEdit = "<a href=""WorkHistoryEdit.asp?lngWorkHistoryID=" & (rstWorkHistory.Fields.Item("WorkHistoryID").Value) & """>"
+			strEditEnd = "</a>"
+		Else
+			strEdit = ""
+			strEditEnd = ""
+		End If 
+%>      
+	  <tr>
+	    <td>&nbsp;</td>
+	    <td nowrap="nowrap"><%=strEdit & (rstWorkHistory.Fields.Item("VendorName").Value) & strEditEnd%></td>
+	    <td><%=strEdit & (rstWorkHistory.Fields.Item("WorkDate").Value) & strEditEnd%></td>
+	    <td nowrap="nowrap"><%=strEdit & (rstWorkHistory.Fields.Item("WorkDescription").Value) & strEditEnd%></td>
+	    <td nowrap="nowrap"><%=strEdit & (rstWorkHistory.Fields.Item("ProjectDescription").Value) & " - " & (rstWorkHistory.Fields.Item("DetailDescription").Value) & strEditEnd%></td>
+	    <td align="right"><%=strEdit & FormatNumber(rstWorkHistory.Fields.Item("Hours").Value, 1) & strEditEnd%></td>
+	    <td align="right"><%=FormatCurrency((rstWorkHistory.Fields.Item("Hours").Value) * (rstWorkHistory.Fields.Item("CurrentRate").Value))%></td>
+	    <td>&nbsp;</td>
+      </tr>
+<%
+		rstWorkHistory.MoveNext
+	Loop
+%>      
+	  <tr>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+      </tr>
 
 <%		
 	If bolProjectsViewGranted Then
 		If bolProjectsAddGranted Then
 %>
-                </table>
+    </table>
     <table border="0" cellspacing="0" cellpadding="0" class="box">
                   <tr>
                     <th colspan="9"><h2>Projects</h2></th>
@@ -921,4 +991,8 @@ Set rstClientPayments = Nothing
 <%
 rstProjectDetails.Close()
 Set rstProjectDetails = Nothing
+%>
+<%
+rstWorkHistory.Close()
+Set rstWorkHistory = Nothing
 %>

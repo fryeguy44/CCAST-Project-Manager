@@ -33,12 +33,12 @@ If (CStr(Request("MM_insert")) = "frmAddPayment") Then
 
     Set MM_editCmd = Server.CreateObject ("ADODB.Command")
     MM_editCmd.ActiveConnection = MM_OBA_STRING
-    MM_editCmd.CommandText = "INSERT INTO dbo.VendorPayments (PaymentDate, PaymentMethodID, Amount, ProcessFee, VendorID) VALUES (?, ?, ?, ?, ?)" 
+    MM_editCmd.CommandText = "INSERT INTO dbo.VendorPayments (PaymentDate, PaymentMethodID, AmountPaid, AmountCredited, VendorID) VALUES (?, ?, ?, ?, ?)" 
     MM_editCmd.Prepared = true
     MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param1", 135, 1, -1, MM_IIF(Request.Form("tbxPaymentDate"), Request.Form("tbxPaymentDate"), null)) ' adDBTimeStamp
     MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param2", 5, 1, -1, MM_IIF(Request.Form("cbxPaymentMethodID"), Request.Form("cbxPaymentMethodID"), null)) ' adDouble
-    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param3", 5, 1, -1, MM_IIF(Request.Form("tbxAmount"), Request.Form("tbxAmount"), null)) ' adDouble
-    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param4", 5, 1, -1, MM_IIF(Request.Form("tbxProcessFee"), Request.Form("tbxProcessFee"), null)) ' adDouble
+    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param3", 5, 1, -1, MM_IIF(Request.Form("tbxAmountPaid"), Request.Form("tbxAmountPaid"), null)) ' adDouble
+    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param4", 5, 1, -1, MM_IIF(Request.Form("tbxAmountCredited"), Request.Form("tbxAmountCredited"), null)) ' adDouble
     MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param5", 5, 1, -1, MM_IIF(Request.Form("htbxVendorID"), Request.Form("htbxVendorID"), null)) ' adDouble
     MM_editCmd.Execute
     MM_editCmd.ActiveConnection.Close
@@ -79,7 +79,7 @@ If (CStr(Request("MM_insert")) = "frmInvoice") Then
     MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param2", 5, 1, -1, MM_IIF(Request.Form("cbxPaymentMethodID"), Request.Form("cbxPaymentMethodID"), null)) ' adDouble
     MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param3", 5, 1, -1, MM_IIF(Request.Form("tbxVendorRate"), Request.Form("tbxVendorRate"), 0)) ' adDouble
     MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param5", 202, 1, 500, Request.Form("tbxNotes")) ' adVarWChar
-    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param4", 5, 1, -1, MM_IIF(Request.Form("htbxVendorID2"), Request.Form("htbxVendorID2"), null)) ' adDouble
+    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param4", 5, 1, -1, MM_IIF(Request.Form("htbxVendorID"), Request.Form("htbxVendorID"), null)) ' adDouble
     MM_editCmd.Execute
     MM_editCmd.ActiveConnection.Close
   End If
@@ -486,7 +486,7 @@ End If
 	    <td><textarea name="tbxNotes" id="tbxNotes" cols="45" rows="5"></textarea></td>
 	    <td align="right"><input name="tbxVendorRate" type="text" id="tbxVendorRate" value="<%=(rstVendors.Fields.Item("Rate").Value)%>" size="8" /></td>
 	    <td><input type="submit" name="btnAddInvoice" id="btnAddInvoice" value="Add Invoice" />
-	      <input name="htbxVendorID2" type="hidden" id="htbxVendorID2" value="<%=lngVendorID%>" /></td>
+	      <input name="htbxVendorID" type="hidden" id="htbxVendorID" value="<%=lngVendorID%>" /></td>
 	    <td>&nbsp;</td>
       </tr>
       <input type="hidden" name="MM_insert" value="frmInvoice" />
@@ -579,8 +579,8 @@ Else
 End If
 %>
 	      </select></td>
-	    <td align="right"><input name="tbxAmount" type="text" id="tbxAmount" size="8" /></td>
-	    <td align="right"><input name="tbxProcessFee" type="text" id="tbxProcessFee" size="8" /></td>
+	    <td align="right"><input name="tbxAmountPaid" type="text" id="tbxAmountPaid" size="8" /></td>
+	    <td align="right"><input name="tbxAmountCredited" type="text" id="tbxAmountCredited" size="8" /></td>
 	    <td><input type="submit" name="btnAddpayment" id="btnAddpayment" value="Add Payment" />
 	      <input name="htbxVendorID" type="hidden" id="htbxVendorID" value="<%=lngVendorID%>" /></td>
 	    <td>&nbsp;</td>

@@ -40,12 +40,12 @@ If (CStr(Request("MM_update")) = "frmEdit") Then
 
     Set MM_editCmd = Server.CreateObject ("ADODB.Command")
     MM_editCmd.ActiveConnection = MM_OBA_STRING
-    MM_editCmd.CommandText = "UPDATE dbo.VendorPayments SET Amount = ?, PaymentDate = ?, PaymentMethodID = ?, ProcessFee = ? WHERE VendorPaymentID = ?" 
+    MM_editCmd.CommandText = "UPDATE dbo.VendorPayments SET PaymentDate = ?, PaymentMethodID = ?, AmountPaid = ?, AmountCredited = ? WHERE VendorPaymentID = ?" 
     MM_editCmd.Prepared = true
-    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param1", 5, 1, -1, MM_IIF(Request.Form("tbxAmount"), Request.Form("tbxAmount"), null)) ' adDouble
-    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param2", 135, 1, -1, MM_IIF(Request.Form("tbxPaymentDate"), Request.Form("tbxPaymentDate"), null)) ' adDBTimeStamp
-    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param3", 5, 1, -1, MM_IIF(Request.Form("cbxPaymentMethodID"), Request.Form("cbxPaymentMethodID"), null)) ' adDouble
-    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param4", 5, 1, -1, MM_IIF(Request.Form("tbxProcessFee"), Request.Form("tbxProcessFee"), null)) ' adDouble
+    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param1", 135, 1, -1, MM_IIF(Request.Form("tbxPaymentDate"), Request.Form("tbxPaymentDate"), null)) ' adDBTimeStamp
+    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param2", 5, 1, -1, MM_IIF(Request.Form("cbxPaymentMethodID"), Request.Form("cbxPaymentMethodID"), null)) ' adDouble
+    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param3", 5, 1, -1, MM_IIF(Request.Form("tbxAmountPaid"), Request.Form("tbxAmountPaid"), null)) ' adDouble
+    MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param4", 5, 1, -1, MM_IIF(Request.Form("tbxAmountCredited"), Request.Form("tbxAmountCredited"), null)) ' adDouble
     MM_editCmd.Parameters.Append MM_editCmd.CreateParameter("param5", 5, 1, -1, MM_IIF(Request.Form("MM_recordId"), Request.Form("MM_recordId"), null)) ' adDouble
     MM_editCmd.Execute
     MM_editCmd.ActiveConnection.Close
@@ -83,7 +83,7 @@ Dim rstVendorPayments_numRows
 
 Set rstVendorPayments_cmd = Server.CreateObject ("ADODB.Command")
 rstVendorPayments_cmd.ActiveConnection = MM_OBA_STRING
-rstVendorPayments_cmd.CommandText = "SELECT VendorPayments.VendorPaymentID, VendorPayments.VendorID, VendorPayments.PaymentMethodID, VendorPayments.PaymentDate, VendorPayments.Amount, VendorPayments.ProcessFee,  Vendors.VendorName FROM VendorPayments  INNER JOIN Vendors ON VendorPayments.VendorID = Vendors.VendorID WHERE VendorPaymentID = ?" 
+rstVendorPayments_cmd.CommandText = "SELECT VendorPayments.VendorPaymentID, VendorPayments.VendorID, VendorPayments.PaymentMethodID, VendorPayments.PaymentDate, VendorPayments.AmountPaid, VendorPayments.AmountCredited,  Vendors.VendorName FROM VendorPayments  INNER JOIN Vendors ON VendorPayments.VendorID = Vendors.VendorID WHERE VendorPaymentID = ?" 
 rstVendorPayments_cmd.Prepared = true
 rstVendorPayments_cmd.Parameters.Append rstVendorPayments_cmd.CreateParameter("param1", 5, 1, -1, rstVendorPayments__lngVendorPaymentID) ' adDouble
 
@@ -228,12 +228,6 @@ If bolPaymentsEditGranted Then
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td align="right"><strong>Amount</strong></td>
-          <td><input name="tbxAmount" type="text" id="tbxAmount" value="<%=(rstVendorPayments.Fields.Item("Amount").Value)%>" size="8" /></td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
           <td align="right"><strong>Payment Date</strong></td>
           <td><input name="tbxPaymentDate" type="text" id="tbxPaymentDate" value="<%=(rstVendorPayments.Fields.Item("PaymentDate").Value)%>" size="11" /></td>
           <td>&nbsp;</td>
@@ -259,9 +253,15 @@ End If
           <td>&nbsp;</td>
         </tr>
         <tr>
+          <td>&nbsp;</td>
+          <td align="right"><strong>Amount Paid</strong></td>
+          <td><input name="tbxAmountPaid" type="text" id="tbxAmountPaid" value="<%=(rstVendorPayments.Fields.Item("AmountPaid").Value)%>" size="8" /></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
             <td width="10">&nbsp;</td>
-            <td align="right"><strong>Process Fee</strong></td>
-          <td><input name="tbxProcessFee" type="text" id="tbxProcessFee" value="<%=(rstVendorPayments.Fields.Item("ProcessFee").Value)%>" size="8" /></td>
+            <td align="right"><strong>Amount Credited</strong></td>
+          <td><input name="tbxAmountCredited" type="text" id="tbxAmountCredited" value="<%=(rstVendorPayments.Fields.Item("AmountCredited").Value)%>" size="8" /></td>
 		<td>&nbsp;</td>
 		</tr>
         <tr>

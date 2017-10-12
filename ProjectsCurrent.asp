@@ -357,3 +357,4 @@ End If
 rstProjects.Close()
 Set rstProjects = Nothing
 %>
+<script src="js/custom.js"></script>

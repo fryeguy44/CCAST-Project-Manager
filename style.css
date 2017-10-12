@@ -610,3 +610,13 @@ top:0;
 left:0;
 z-index:1;
 }
+
+a
+{
+	color: #000;
+}
+
+ .editfileuploadedtitle,.editDeleteAction
+  {
+	 cursor:pointer;
+  }

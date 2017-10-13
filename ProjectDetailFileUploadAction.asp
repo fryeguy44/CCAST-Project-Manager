@@ -1,7 +1,6 @@
 <!--#include file="Connections/OBA.asp" -->
 <!--#include file="_upload.asp" -->
 
-
 <%
 Dim DestinationPath, DestinationPath_temp, id
 DestinationPath = Server.MapPath("/UploadFiles")
@@ -29,7 +28,7 @@ response.write(Form.State)
 		MM_editCmd.CommandText = "select top 1 uploadFileID from UploadFiles order by uploadFileID desc" 
 		SET RS = MM_editCmd.Execute
 		
-		lastInsertedId = RS("uploadFileID")
+		lastInsertedId = RS("uploadFileID") 
 		
 		MM_editCmd.ActiveConnection.Close
 		

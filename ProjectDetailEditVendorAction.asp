@@ -68,7 +68,7 @@ If (CStr(Form("MM_update")) = "frmEdit") Then
     MM_editCmd.Execute
     MM_editCmd.ActiveConnection.Close
 	
-	response.redirect("/ProjectDetailEditVendor.asp?lngProjectDetailID=" & request.querystring("lngProjectDetailID"))
+	'response.redirect("/ProjectDetailEditVendor.asp?lngProjectDetailID=" & request.querystring("lngProjectDetailID"))
 	
   End If
 End If

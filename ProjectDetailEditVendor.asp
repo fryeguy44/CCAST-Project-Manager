@@ -17,8 +17,6 @@ MM_abortEdit = false
 
 
 
-
-	
 <%
 Dim lngProjectDetailID
 Dim strReturnPath
@@ -240,7 +238,6 @@ End If
           <td><INPUT TYPE="file" NAME="file" id="fileinput"  ></td>
           <td>&nbsp;</td>
         </tr>
-		
         <tr>
             <td width="10">&nbsp;</td>
             <td>&nbsp;</td>

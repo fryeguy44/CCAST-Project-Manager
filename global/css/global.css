@@ -13,15 +13,38 @@ html {
 	overflow-x: hidden;
 	height: 100%; /* Needed for Sticky Footer */
 }
-body {
+/*body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 13px;
 	margin: 0;
 	background-image: url(/local/images/bg-top.gif);
 	background-position:top center;
 	background-repeat:repeat-x;
+	height: 100%; 
+	
+}*/
+
+	/* Needed for Sticky Footer */
+
+
+#header table
+{
+	width:1200px;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0;
+	/*background-image: url(/local/images/bg-top.gif);*/
+	background-position:top center;
+	background-repeat:repeat-x;
 	height: 100%; /* Needed for Sticky Footer */
 }
+
+
+
+
 a, a:visited {text-decoration: none;}
 a:hover {text-decoration: underline;}
 a img {outline: none; border: none;}
@@ -76,7 +99,7 @@ hr {											/* Horizontal Lines */
 
 /*  Header  */
 
-#header {
+/*#header {
 	width: 90%;
 	min-width: 900px;
 	height: 145px;
@@ -84,6 +107,62 @@ hr {											/* Horizontal Lines */
 	position:relative;
 	clear:both;
 }
+*/
+
+/* Navigation Row Container */
+
+/* #nav_bar {										
+	height: 46px;
+	width: 90%;
+	min-width: 900px;
+	margin: 0 auto;
+	position:relative;
+	z-index: 50;
+} */
+
+
+
+
+
+#nav_bar {
+    height: 46px;
+    width: 100%;
+    min-width: 900px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 1;
+    background-color: #05164B;
+    top: 145px;
+    border-top: 1px solid white;
+	 padding-left: 80px;
+}
+
+
+
+
+
+#header {
+    width: 100%;
+    min-width: 900px;
+    height: 145px;
+    margin: 0 auto;
+	 z-index:5;
+    background-color: #05164B;
+    position: fixed;
+    /* clear: both; */
+    top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 #logo {											/* Casino Logo (Left) */
 	display: block;
 	float: left;
@@ -127,14 +206,7 @@ hr {											/* Horizontal Lines */
 
 /*  Nav Bar  */
 
-#nav_bar {										/* Navigation Row Container */
-	height: 46px;
-	width: 90%;
-	min-width: 900px;
-	margin: 0 auto;
-	position:relative;
-	z-index: 50;
-}
+
 #nav {											/* QuickMenu Container */
 	position:relative;
 	float:left;
@@ -205,14 +277,36 @@ hr {											/* Horizontal Lines */
 
 /*  Content  */
 
-#content {										/* Content Area Container */
+/* Content Area Container */
+
+/*#content {										
 	width: 90%;
 	min-width: 900px;
 	margin: 0 auto;
 	padding: 0;
 	position:relative;
-	z-index: 1; /* Should prevent IE z-index issues with menu */
+	z-index: 1; 
 }
+*/
+/* Should prevent IE z-index issues with menu */
+
+
+
+#content {
+    width: 90%;
+    min-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+    top: 200px;
+    /*height: 700px;*/
+}
+
+
+
+
+
 
 
 /*  Footer  */
@@ -228,15 +322,19 @@ hr {											/* Horizontal Lines */
 }
 #footer {										/* Full-Width Footer */
 	width:100%;
-	position:relative;
+	position:fixed;
 	margin: 0;
 	background-image: url(/local/images/footer-bg.gif);
 	background-position: top center;
 	background-repeat: repeat-x;
 	height: 65px;
+	bottom:0px;
 }
-#footer_inside {								/* Footer Content Container */
-	position: relative;
+/* Footer Content Container */
+#footer_inside {
+									
+	/*position: relative;*/
+	
 	padding: 16px 0 0;
 	width: 90%;
 	min-width: 900px;

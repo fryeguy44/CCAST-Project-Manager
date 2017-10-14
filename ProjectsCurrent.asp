@@ -179,7 +179,10 @@ If bolProjectsViewGranted OR bolVendorOnlyViewGranted OR bolClientOnlyViewGrante
 		End If 
 		
 		If bolVendorOnlyViewGranted Then
-			strEditDetails = "<a href=""ProjectDetailEditVendor.asp?lngProjectDetailID=" & (rstProjects.Fields.Item("ProjectDetailID").Value) & """>"
+			'strEditDetails = "<a href=""ProjectDetailEditVendor.asp?lngProjectDetailID=" & (rstProjects.Fields.Item("ProjectDetailID").Value) & """>"
+				
+	 strEditDetails = "<a href=""javascript:openCommonFilesPopUp(" & rstProjects.Fields.Item("ProjectDetailID").Value & ");"">"
+			  		
 			strEditDetailsEnd = "</a>"
 			strVendorName = rstProjects.Fields.Item("VendorName").Value
 		End If 
@@ -357,3 +360,4 @@ End If
 rstProjects.Close()
 Set rstProjects = Nothing
 %>
+<script src="js/custom.js"></script>

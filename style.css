@@ -1,5 +1,4 @@
 /*font*/
-
 @font-face {
 	font-family: Roboto-Regular;
 	src: url(fonts/Roboto-Regular.ttf);
@@ -609,4 +608,39 @@ width:100%;
 top:0;
 left:0;
 z-index:1;
+}
+
+a
+{
+	color: #000;
+}
+
+ .editfileuploadedtitle,.editDeleteAction
+  {
+	 cursor:pointer;
+  }
+ 
+ 
+ 
+ .box_1 td {
+    padding: 1px 4px;
+    font-size: 13px;
+    height: 12px;
+    overflow: hidden;
+} 
+  
+  
+  
+  
+  
+  
+.detailstext
+{
+	 font-size: 26px;
+    margin: 15px 0 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+	 color: #091436;
+	 font-weight:600;
 }
